@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; min-height: 15.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="pt-BR"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Missão: S.O.S. Aurora - Uma Aventura de Física&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&amp;family=Roboto+Slab:wght@300;400;700&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- MathJax para renderização de equações matemáticas --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>MathJax = {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>tex: {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>inlineMath: [['$', '$'], ['\\(', '\\)']],</p>
+<p class="p1"><span class="Apple-converted-space">            </span>displayMath: [['$$', '$$'], ['\\[', '\\]']]</p>
+<p class="p1"><span class="Apple-converted-space">          </span>},</p>
+<p class="p1"><span class="Apple-converted-space">          </span>svg: {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>fontCache: 'global'</p>
+<p class="p1"><span class="Apple-converted-space">          </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Roboto Slab', serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #0c0a1e;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-image: url('https://www.transparenttextures.com/patterns/stardust.png');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#game-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Roboto Slab', serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-width: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-style: solid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-image: linear-gradient(to bottom right, #8A2BE2, #4169E1, #00BFFF) 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 25px rgba(65, 105, 225, 0.4);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>h2, .font-orbitron {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Orbitron', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-shadow: 0 0 5px #00BFFF;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.action-button, .gemini-button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 5px rgba(0,0,0,0.5);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom-width: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.action-button:hover, .gemini-button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-2px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 10px rgba(0,0,0,0.6);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.action-button:disabled {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: not-allowed;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.slide-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: opacity 0.7s ease-in-out;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.slide-content.visible {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.feedback {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-left: 4px solid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 0 8px 8px 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.feedback-correct {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: #34d399; /* emerald-400 */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: rgba(16, 185, 129, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.feedback-incorrect {</p>
+<p class="p1"><span class="Apple-converted-space">             </span>border-color: #f87171; /* red-400 */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: rgba(248, 113, 113, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.gemini-response {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-top: 2px dashed #4169E1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: rgba(65, 105, 225, 0.05);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 1.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.loader {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 4px solid #f3f3f3;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-top: 4px solid #4169E1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>animation: spin 1s linear infinite;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-right: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@keyframes spin {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>0% { transform: rotate(0deg); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>100% { transform: rotate(360deg); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>mjx-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #e5e7eb; /* Cor do texto (gray-200) */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal-overlay {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>inset: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: rgba(12, 10, 30, 0.8);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(4px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>z-index: 50;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.modal-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #1a1a2e;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #4169E1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 25px rgba(65, 105, 225, 0.4);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="bg-[#0c0a1e] text-gray-200 flex items-center justify-center min-h-screen p-4"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="game-container" class="w-full max-w-4xl bg-[#1a1a2e] rounded-lg p-6 md:p-8 relative"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="score-display" class="absolute top-4 left-4 font-orbitron text-lg text-cyan-300"&gt;PONTUAÇÃO: 0&lt;/div&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="absolute top-4 right-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="reset-btn" class="action-button bg-gray-700 hover:bg-gray-600 text-white border-gray-900 font-bold py-2 px-4 rounded-md"&gt;Reiniciar Missão&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="slide-content" class="slide-content mt-12"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="slide-image-container" class="mb-4"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="slide-text-container"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="slide-choices-container" class="mt-6 space-y-3"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="gemini-output-container" class="mt-4"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Modals --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="enem-modal" class="modal-overlay hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="modal-content p-8 rounded-lg max-w-lg text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3 class="font-orbitron text-2xl text-yellow-400 mb-4"&gt;E.N.E.M (Enciclopédia de Navegação e Engenharia da Missão)&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-300 mb-6"&gt;Atenção: Acessar a E.N.E.M. projeta o terminal holográfico da Enciclopédia de Navegação e Engenharia da Missão, liberando desafios de treinamento interplanetário específicos dos sistemas que você está analisando, deseja continuar?&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-center space-x-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="enem-confirm-btn" class="action-button bg-blue-600 hover:bg-blue-500 text-white border-blue-800 px-8 py-2"&gt;Sim&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="enem-cancel-btn" class="action-button bg-red-600 hover:bg-red-500 text-white border-red-800 px-8 py-2"&gt;Não&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="video-modal" class="modal-overlay hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="modal-content p-6 rounded-lg max-w-4xl w-full"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-between items-center mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="font-orbitron text-2xl text-red-400"&gt;Banco de Imagens Primitivas&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;button id="video-close-btn" class="text-gray-400 hover:text-white"&gt;&amp;times;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="video-grid" class="space-y-6"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- BANCO DE DADOS DA HISTÓRIA ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const storyData = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>'1':{title:"S.O.S. Estação Aurora",image:"https://placehold.co/800x400/0c0a1e/4169E1?text=Alerta+Vermelho+na+Ponte",text:`O som estridente do alarme corta o silêncio da Estação Espacial Aurora. Luzes vermelhas pulsam nos corredores metálicos. Na ponte de comando, a I.A. Central projeta um aviso holográfico:&lt;br&gt;&lt;br&gt;&lt;strong&gt;"ALERTA. FALHA CASCATA DETECTADA. SISTEMAS DE SUPORTE À VIDA EM NÍVEL CRÍTICO. TEMPERATURA INTERNA INSTÁVEL."&lt;/strong&gt;&lt;br&gt;&lt;br&gt;Como o(a) mais novo(a) Cadete de Engenharia a bordo, todos os olhares se voltam para você. A Comandante Eva Rostova aponta para o painel principal.&lt;br&gt;— Cadete, os sistemas de controle térmico entraram em colapso. Precisamos de você. Estabilize a temperatura antes que seja tarde demais. Sua missão começa agora.`,choices:[{text:"Assumir o controle e iniciar diagnóstico",nextSlide:'c1_hub'}]},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>'c1_hub':{isHub:!0,chapter:1,title:"Cap. 1 – O Coração Gelado",image:"https://placehold.co/800x400/1a1a2e/87CEEB?text=Controle+de+Suporte+à+Vida",text:"A falha no sistema de suporte à vida parece ter múltiplas causas. Você precisa diagnosticar e reparar cada subsistema para restaurar a estabilidade. Escolha um bloco de diagnóstico para começar.",blocks:[{id:'b3',name:'Protocolo de Calibração (Termometria)',startSlide:'c1_b3_s1'},{id:'b4',name:'Contenção de Fuga Térmica (Calorimetria)',startSlide:'c1_b4_s1'},{id:'b5',name:'Integridade Estrutural (Condução)',startSlide:'c1_b5_s1'},{id:'b6',name:'Controle Ambiental (Radiação &amp; Convecção)',startSlide:'c1_b6_s1'}],nextChapterSlide:'c2_hub'},</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Bloco 3: Termometria</p>
+<p class="p1"><span class="Apple-converted-space">            </span>'c1_b3_s1':{isDiagnosis:!0,chapter:1,block:'b3',title:"Protocolo de Calibração (1/3): Escalas",text:"Log da I.A.: Detectada anomalia no sistema de refrigeração. A unidade de controle, um modelo Aratech legado, opera em Fahrenheit. Os sensores principais, no entanto, reportam em Celsius. A conversão precisa é essencial para evitar o congelamento da linha de plasma.",nextSlideInBlock:'c1_b3_s2',diaryPrompt:"Explique os conceitos de escalas termométricas. Detalhe a origem das escalas Celsius e Fahrenheit, seus pontos fixos e por que a escala Kelvin é considerada absoluta. Enfatize a importância da precisão na conversão para a segurança dos sistemas.",geminiCalcPrompt:"Você é a I.A. da Estação Aurora. Crie um desafio de CÁLCULO com 5 opções de resposta. O cenário: 'O painel de controle do núcleo do reator mostra uma leitura de temperatura em graus Celsius, mas o sistema de refrigeração de emergência só aceita comandos em graus Fahrenheit.' A pergunta deve exigir a conversão de um valor. O feedback deve mostrar a fórmula $$T_{F} = T_{C} \\cdot 1.8 + 32$$ em modo de exibição e o cálculo passo a passo."},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>'c1_b3_s2':{isDiagnosis:!0,chapter:1,block:'b3',title:"Protocolo de Calibração (2/3): Variação",text:"Log da I.A.: A falha parece estar na interpretação das &lt;strong&gt;variações&lt;/strong&gt; de temperatura. Uma variação de 1°C não é o mesmo que uma variação de 1°F, mas é idêntica a uma variação de 1 K. Os atuadores do sistema de refrigeração estão respondendo de forma desproporcional.",nextSlideInBlock:'c1_b3_s3',diaryPrompt:"Explique a diferença entre a conversão de um ponto de temperatura e a conversão de uma &lt;strong&gt;variação&lt;/strong&gt; de temperatura ($\\Delta T$). Explique por que $\\Delta T_C = \\Delta T_K$ e por que $\\Delta T_F = 1.8 \\cdot \\Delta T_C$.",geminiConceptPrompt:"Você é a I.A. da Estação Aurora. Crie um desafio CONCEITUAL com 5 opções de resposta. O cenário: 'Dois sensores medem a variação de temperatura de um componente. O sensor A (em Celsius) registra uma variação de 15°C. O sensor B (em Kelvin) registra uma variação de 15 K. O sensor C (em Fahrenheit) registra uma variação de 15°F.' A pergunta deve ser: 'Quais sensores registraram a mesma variação de energia térmica?'. O feedback deve explicar por que a variação em Celsius e Kelvin são equivalentes, enquanto a de Fahrenheit é diferente."},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>'c1_b3_s3':{isDiagnosis:!0,chapter:1,block:'b3',title:"Protocolo de Calibração (3/3): Função Termométrica",text:"Log da I.A.: Alguns sensores antigos não são padronizados. Eles relacionam uma propriedade física (como a resistência de um fio) com a temperatura através de uma função linear. Precisamos saber como calibrar um desses sensores usando dois pontos fixos conhecidos, como os pontos de fusão e ebulição da água.",nextHub:'c1_hub',diaryPrompt:"Explique como construir a equação de uma escala termométrica arbitrária ($T_X$) em relação a uma escala conhecida ($T_C$), usando dois pontos fixos e a relação $$\\frac{T_C - T_{C1}}{T_{C2} - T_{C1}} = \\frac{T_X - T_{X1}}{T_{X2} - T_{X1}}$$. Detalhe o que cada termo significa.",geminiCalcPrompt:"Você é a I.A. da Estação Aurora. Crie um desafio de CÁLCULO com 5 opções de resposta. O cenário: 'Um termômetro descalibrado marca 10°X no ponto de fusão do gelo (0°C) e 90°X no ponto de ebulição da água (100°C). Qual temperatura em Celsius corresponde a 50°X?'. O feedback deve mostrar o passo a passo da resolução usando a relação entre as escalas, com as fórmulas principais em modo de exibição ($$fórmula$$)."},</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Bloco 4: Trocas de Calor</p>
+<p class="p1"><span class="Apple-converted-space">            </span>'c1_b4_s1':{isDiagnosis:!0,chapter:1,block:'b4',title:"Contenção de Fuga Térmica (1/3): Capacidade Térmica",text:"Log da I.A.: Cada material a bordo reage de forma diferente ao calor. Alguns, como a água usada na refrigeração, possuem alto calor específico e podem absorver muita energia. Outros, como os metais do casco, têm baixa capacidade térmica e aquecem rapidamente. Essa distinção é vital.",nextSlideInBlock:'c1_b4_s2',diaryPrompt:"Explique a diferença fundamental entre &lt;strong&gt;Calor Específico&lt;/strong&gt; ($c$) e &lt;strong&gt;Capacidade Térmica&lt;/strong&gt; ($C$). Explique que 'c' é uma propriedade intensiva do material, enquanto 'C' é uma propriedade extensiva do objeto ($C=m \\cdot c$).",geminiConceptPrompt:`Você é a I.A. da Estação Aurora. Crie um desafio CONCEITUAL com 5 opções de resposta. **REGRA DE VARIAÇÃO: Aleatoriamente, decida se o material A ou B terá o maior calor específico e construa a pergunta e o feedback com base nessa escolha, para que a resposta correta não seja sempre a mesma.** O cenário: "Dois componentes de mesma massa, feitos de materiais diferentes, recebem a mesma quantidade de calor de uma fonte de energia. O sensor de diagnóstico registra a variação de temperatura de cada um." A pergunta deve levar o cadete a identificar qual material tem o maior calor específico com base nas variações de temperatura. O feedback deve explicar a relação inversa entre calor específico e variação de temperatura para uma dada quantidade de calor.`},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>'c1_b4_s2':{isDiagnosis:!0,chapter:1,block:'b4',title:"Contenção de Fuga Térmica (2/3): Calor Latente",text:"Log da I.A.: Os sistemas de refrigeração de emergência usam a vaporização de líquidos para absorver enormes quantidades de calor sem aumentar a temperatura. Este é o conceito de calor latente. Precisamos verificar se a energia da fuga térmica é suficiente para causar uma mudança de fase no refrigerante.",nextSlideInBlock:'c1_b4_s3',diaryPrompt:"Explique o conceito de &lt;strong&gt;Calor Latente&lt;/strong&gt;. Descreva como a energia é usada para quebrar as ligações intermoleculares durante uma mudança de fase (fusão, vaporização) sem alterar a temperatura do sistema. Use a fórmula $$Q = m \\cdot L$$ para ilustrar.",geminiCalcPrompt:`Você é a I.A. da Estação Aurora. Crie um desafio de CÁLCULO com 5 opções de resposta. O cenário: "Uma massa de gelo a 0°C precisa ser completamente derretida. Dado o calor latente de fusão da água, o cadete deve calcular a quantidade de calor necessária." O feedback deve mostrar a fórmula $$Q = m \\cdot L$$ em modo de exibição e o cálculo.`},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>'c1_b4_s3':{isDiagnosis:!0,chapter:1,block:'b4',title:"Contenção de Fuga Térmica (3/3): Equilíbrio",text:"Log da I.A.: Alerta! Fluido do sistema de refrigeração primário vazou para o reservatório secundário. Os dois fluidos estão em temperaturas diferentes. É preciso prever a temperatura de equilíbrio para evitar danos por choque térmico.",nextHub:'c1_hub',diaryPrompt:"Explique o &lt;strong&gt;Princípio das Trocas de Calor&lt;/strong&gt; em sistemas isolados. Detalhe que a soma das quantidades de calor trocadas é nula ($$\\sum Q = 0$$), o que significa que o calor cedido pelos corpos mais quentes é igual ao calor recebido pelos corpos mais frios.",geminiCalcPrompt:`Você é a I.A. da Estação Aurora. Crie um desafio de CÁLCULO com 5 opções de resposta. O cenário: "Uma peça de metal superaquecida de um motor é ejetada em um tanque de água de refrigeração." **REGRA DE VARIAÇÃO: Os dados podem estar em unidades diferentes (ex: massa em gramas, calor específico em J/kg°C ou cal/g°C), exigindo conversão. Os materiais e o contexto podem variar (ex: fluido criogênico resfriando um sensor, etc.).** A pergunta deve exigir o cálculo da temperatura final de equilíbrio do sistema. O feedback deve mostrar a aplicação do princípio das trocas de calor, começando com a equação fundamental em modo de exibição: $$Q_{\\text{recebido}} + Q_{\\text{cedido}} = 0$$ Em seguida, mostre o cálculo passo a passo de forma clara e organizada, com cada passo em uma nova linha.`},</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Outros blocos...</p>
+<p class="p1"><span class="Apple-converted-space">            </span>'c1_b5_s1':{isDiagnosis:!0,chapter:1,block:'b5',title:"Integridade Estrutural (1/2): Lei de Fourier",text:"Log da I.A.: Sensores indicam uma perda de calor anormal em uma seção do casco. A energia está se propagando por condução através de painéis que deveriam ser isolantes. É preciso entender a Lei de Fourier para quantificar e mitigar essa perda.",nextSlideInBlock:'c1_b5_s2',diaryPrompt:"Explique a &lt;strong&gt;Lei de Fourier&lt;/strong&gt; para o fluxo de calor ($Φ = \\frac{k \\cdot A \\cdot \\Delta T}{L}$). Detalhe o que cada variável representa (condutividade térmica, área, variação de temperatura, espessura) e como elas influenciam a taxa de transferência de calor.",geminiCalcPrompt:`Você é a I.A. da Estação Aurora. Crie um desafio de CÁLCULO com 5 opções de resposta. O cenário: "Um painel do casco da nave, com área, espessura e condutividade térmica conhecidas, está com uma face exposta ao frio do espaço e a outra face em contato com o ambiente interno aquecido." A pergunta deve ser sobre o cálculo do fluxo de calor (potência térmica) através do painel. O feedback deve mostrar a Lei de Fourier em modo de exibição ($$Φ = \\frac{k \\cdot A \\cdot \\Delta T}{L}$$) e o cálculo detalhado.`},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>'c1_b5_s2':{isDiagnosis:!0,chapter:1,block:'b5',title:"Integridade Estrutural (2/2): Materiais",text:"Log da I.A.: A escolha do material é tudo. Alguns materiais são excelentes condutores, outros são isolantes. Sua condutividade térmica ($k$) define sua função. A falha pode estar em um painel de material inadequado.",nextHub:'c1_hub',diaryPrompt:"Explique o conceito de &lt;strong&gt;condutividade térmica&lt;/strong&gt; ($k$). Compare materiais condutores (metais) e isolantes (cerâmicas, vácuo), explicando como a estrutura atômica de cada um facilita ou dificulta a transferência de energia por vibrações.",geminiConceptPrompt:`Você é a I.A. da Estação Aurora. Crie um desafio CONCEITUAL com 5 opções de resposta. **REGRA DE VARIAÇÃO: Aleatoriamente, decida qual material (A ou B) terá a maior condutividade e construa a questão e o feedback com base nisso.** O cenário: "Temos dois painéis de materiais diferentes, A e B, com a mesma área e espessura. Ambos são submetidos à mesma diferença de temperatura." A pergunta deve ser sobre qual painel permitirá um maior fluxo de calor e por quê. O feedback deve explicar a relação direta entre a condutividade térmica ($k$) e o fluxo de calor.`},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>'c1_b6_s1':{isDiagnosis:!0,chapter:1,block:'b6',title:"Controle Ambiental (1/2): Convecção",text:"Log da I.A.: O calor não se move apenas através de sólidos. As correntes de ar no nosso sistema de ventilação transferem calor por convecção. Uma falha nessas correntes pode criar pontos perigosamente quentes ou frios no habitat.",nextSlideInBlock:'c1_b6_s2',diaryPrompt:"Explique o processo de &lt;strong&gt;Convecção&lt;/strong&gt;. Diferencie convecção natural (causada por diferenças de densidade induzidas pela temperatura, dependente da gravidade) e convecção forçada (causada por ventiladores e bombas), ambas cruciais para o sistema de suporte à vida.",geminiConceptPrompt:`Você é a I.A. da Estação Aurora. Crie um desafio CONCEITUAL com 5 opções de resposta. O cenário: "Em um ambiente de microgravidade, um aquecedor é ligado. Como o ar aquecido se comportará em comparação com um ambiente com gravidade normal?" A pergunta deve testar o entendimento de que a convecção natural depende da gravidade (densidade). O feedback deve explicar que, sem gravidade, as correntes de convecção natural não se formam eficientemente.`},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>'c1_b6_s2':{isDiagnosis:!0,chapter:1,block:'b6',title:"Controle Ambiental (2/2): Radiação",text:"Log da I.A.: No vácuo, a principal forma de transferência de calor é a radiação. Os painéis radiadores da estação dissipam o excesso de calor para o espaço. A eficiência deles depende da temperatura e das propriedades da superfície. Uma falha aqui é crítica.",nextHub:'c1_hub',diaryPrompt:"Explique a &lt;strong&gt;Radiação Térmica&lt;/strong&gt;. Detalhe que todo corpo com temperatura acima do zero absoluto emite ondas eletromagnéticas e explique a Lei de Stefan-Boltzmann ($P = \\sigma \\cdot \\epsilon \\cdot A \\cdot T^4$), enfatizando a forte dependência da temperatura ($T^4$) e da emissividade da superfície ($\\epsilon$).",geminiCalcPrompt:`Você é a I.A. da Estação Aurora. Crie um desafio de CÁLCULO com 5 opções de resposta. O cenário: "Um painel radiador externo da estação, com área e emissividade conhecidas, está operando a uma certa temperatura." A pergunta deve ser sobre a potência total que ele irradia p</p>
+</body>
+</html>
